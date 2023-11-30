@@ -10,7 +10,7 @@ import Navbar from './components/navbar';
 import Landingpage from './pages/landingpage';
 import Profile from './profile/profile';
 import Home from './pages/Home';
-import WellBeing from './pages/WellBeing';
+import WellBeing from './pages/Wellbeing/WellBeing';
 import Workspace from './pages/Workspace';
 import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
