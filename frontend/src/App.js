@@ -14,6 +14,7 @@ import WellBeing from './pages/WellBeing';
 import Workspace from './pages/Workspace';
 import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
+import Database from './pages/database';
 import { UserProvider } from './UserContext';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/wellbeing" element={<WellBeing />} />
           <Route path="/workspace" element={<Workspace />} />
           <Route path="/todo" element={<TodoList />} />
+          <Route path="/database" element={<Database />} />
           <Route path="/footer" element={<Footer />} />
         </Routes>
       </UserProvider>

@@ -7,27 +7,74 @@ import { useUser } from '../UserContext';
 import logo from "../images/logo.png";
 const CustomNavbar = () => {
   const Navigate = useNavigate()
-  const { userId } = useUser(); 
+  const { userId,role } = useUser(); 
+  // const [isAdmin, setIsAdmin] = useState(false);
   // const loggedInUsername = 'John Doe';
   // const firstLetter = loggedInUsername.charAt(0).toUpperCase();
   const [firstLetter, setFirstLetter] = useState('');
   
+  // useEffect(() => {
+  //   // Fetch user data or user's name based on the ID from the backend
+  //   const fetchUserData = async () => {
+  //     try {
+  //       console.log(userId);
+  //       console.log("Role is" ,role);
+  //       let response
+  //       if (role === 'admin') {
+  //         // Change the endpoint if the user is an admin
+  //          response = await axios.get(`http://localhost:3001/api/profile/${userId}`); 
+  //       }else{
+  //          response = await axios.get(`http://localhost:3001/api2/profile/${userId}`); // Replace with the correct endpoint
+  //       }
+  //         const userData = response.data;
+  //       const username = response.data.name;
+  //       const setRole=response.data.role;
+  //       setFirstLetter(username.charAt(0).toUpperCase());
+  //       // setRole(userData.role || false);
+  //     } catch (error) {
+  //       console.error('Error fetching user data:', error);
+  //     }
+  //   };
+  //   if (userId) {
+  //     fetchUserData();
+  //   }
+  // }, [userId]);
   useEffect(() => {
-    // Fetch user data or user's name based on the ID from the backend
     const fetchUserData = async () => {
       try {
-        console.log(userId);
-        const response = await axios.get(`http://localhost:3001/api2/profile/${userId}`); // Replace with the correct endpoint
-        const username = response.data.name;
-        setFirstLetter(username.charAt(0).toUpperCase());
+        if (userId) {
+          let response;
+          if (role === 'admin') {
+            response = await axios.get(`http://localhost:3001/api/profile/${userId}`);
+          } else {
+            response = await axios.get(`http://localhost:3001/api2/profile/${userId}`);
+          }
+  
+          console.log('Response data:', response.data); // Log the response data
+  
+          if (response.data) {
+            const userData = response.data;
+            const username = userData.email;
+            // const userRole = userData.role;
+  
+            if (username ) {
+              setFirstLetter(username.charAt(0).toUpperCase());
+              // setRole(userRole || false);
+            } else {
+              console.error('Username or role not found in response data.');
+            }
+          } else {
+            console.error('No data received from the server.');
+          }
+        }
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
-    if (userId) {
-      fetchUserData();
-    }
-  }, [userId]);
+  
+    fetchUserData();
+  }, [userId, role]);
+  
   const userProfileClick = () => {
     Navigate('/profile')
   };
@@ -87,6 +134,11 @@ const CustomNavbar = () => {
             <Nav.Link as={NavLink} exact to="/todo" activeClassName="active">
               Todo
             </Nav.Link>
+            {role=='admin' && ( // Render the "Database" link only if the user is an admin
+            <Nav.Link as={NavLink} exact to="/database" activeClassName="active">
+              Database
+            </Nav.Link>
+          )}
           </Nav>
           <Nav className='ms-auto'>
             <div className="avatar" onClick={userProfileClick}>

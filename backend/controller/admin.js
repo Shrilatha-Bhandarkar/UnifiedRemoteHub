@@ -1,7 +1,68 @@
 // controllers/adminController.js
 
 const Admin = require('../modal/Admin.js'); // Replace with your Admin model
+const Company=require('../modal/Company.js')
 const bcrypt = require('bcryptjs');
+
+exports.getAllCompanies = async (req, res) => {
+  try {
+    const companies = await Company.find();
+    res.json(companies);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getCompanyById = async (req, res) => {
+  const companyId = req.params.id; // Assuming the company ID is passed as a parameter
+
+  try {
+    const company = await Company.findById(companyId);
+    if (!company) {
+      return res.status(404).json({ message: 'Company not found' });
+    }
+
+    res.status(200).json(company);
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
+exports.deleteCompanyById = async (req, res) => {
+  const companyId = req.params.id; // Assuming the company ID is passed as a parameter
+
+  try {
+    const company = await Company.findById(companyId);
+
+    if (!company) {
+      return res.status(404).json({ message: 'Company not found' });
+    }
+
+    await Company.findByIdAndDelete(companyId);
+
+    res.status(200).json({ message: 'Company deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
+// Create a new company
+exports.createCompany = async (req, res) => {
+  const { name, description } = req.body;
+
+  const company = new Company({
+    name,
+    description,
+  });
+
+  try {
+    const newCompany = await company.save();
+    res.status(201).json(newCompany);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
 
 exports.adminLogin = async (req, res) => {
   try {
@@ -50,5 +111,22 @@ exports.createAdmin = async (req, res) => {
     res.status(201).json({ message: 'Admin created successfully', admin: newAdmin });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getUserProfile = async (req, res) => {
+  const userId = req.params.id; // Assuming the user ID is passed as a parameter
+
+  try {
+    // Fetch user data from the database based on the ID
+    const user = await Admin.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Return the user profile data
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
   }
 };
