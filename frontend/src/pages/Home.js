@@ -5,9 +5,10 @@ import Navbar from '../components/navbar';
 import RemoteHome from "../images/RemoteHome.png";
 import './styles/Home.css';
 import "./Wellbeing/WellBeing"
+import img from "../assets/images/background.jpg"
 const Home = () => {
   const backgroundStyles = {
-    backgroundImage: `url(${RemoteHome})`,
+    backgroundImage: `url(${img})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
@@ -21,7 +22,7 @@ const Home = () => {
       </div>
       <div style={backgroundStyles}>
         <div className="text-container">
-          <h1>Distance is no obstacle when minds unite in the digital space. 
+          <h1 >Distance is no obstacle when minds unite in the digital space. 
             Remote work is not a compromise; it's a celebration of our ability to connect beyond borders</h1>
         </div>
       </div>
