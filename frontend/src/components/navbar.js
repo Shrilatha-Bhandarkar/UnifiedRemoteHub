@@ -145,6 +145,9 @@ const CustomNavbar = () => {
             <Nav.Link as={NavLink} exact to="/todo" activeClassName="active">
               Todo
             </Nav.Link>
+            <Nav.Link as={NavLink} exact to="/About" activeClassName="active">
+              About us
+            </Nav.Link>
             {role=='admin' && ( // Render the "Database" link only if the user is an admin
             <Nav.Link as={NavLink} exact to="/database" activeClassName="active">
               Database

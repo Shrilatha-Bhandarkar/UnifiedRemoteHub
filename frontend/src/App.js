@@ -21,6 +21,7 @@ import AnnouncementPage from "./pages/WorkspaceSection"
 import ProjectsPage from './pages/ProjectsPage';
 import OngoingPage from './pages/OngoingTasksPage';
 import MeetingsPage from './pages/MeetingsPage';
+import About from './components/aboutUs'
 function App() {
   return (
     <Router>
@@ -45,6 +46,7 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/ongoing" element={<OngoingPage />} />
         <Route path="/meetings" element={<MeetingsPage />} />
+        <Route path="/About" element={<About />} />
         </Routes>
       </UserProvider>
       <Footer />
