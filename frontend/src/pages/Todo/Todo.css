@@ -1,10 +1,10 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
-  }
+  } */
   .todo-app {
     display: flex;
     flex-direction: column;
@@ -18,11 +18,11 @@
     padding-bottom: 32px;
   }
   
-  h1 {
+  /* h1 {
     margin: 32px 0;
     color: #0c0c0c;
     font-size: 24px;
-  }
+  } */
   
   .complete {
     text-decoration: line-through;
@@ -34,11 +34,11 @@
   }
   
   .todo-input {
-    padding: 14px 32px 14px 16px;
+    /* padding: 14px 32px 14px 8px; */
     border-radius: 4px 0 0 4px;
     border: 2px solid #131314;
     outline: none;
-    width: 320px;
+    /* width: 320px; */
     background: transparent;
     color: #111010;
   }
@@ -48,9 +48,10 @@
   }
   
   .todo-button {
-    padding: 16px;
+    /* padding: 4px; */
+    margin-left: 10px;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 20%;
     cursor: pointer;
     outline: none;
     background: linear-gradient(

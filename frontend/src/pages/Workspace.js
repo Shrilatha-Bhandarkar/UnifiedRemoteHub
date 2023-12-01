@@ -195,6 +195,7 @@ const handleJoinWorkspace = (company) => {
   } else {
     console.log('Admin role. Showing View Workspace');
     // Handle admin actions if needed
+    navigate('/page');
   }
 };
 
