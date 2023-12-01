@@ -26,8 +26,7 @@ const Work = () => {
           <li>
           <a href='https://07ed39415730620e2c.gradio.live'>project assistant</a>
           </li>
-           {/* Styling for the right side image */}
-      
+    
         </ul>
         <div className="image-container">
         <img
