@@ -34,4 +34,4 @@ def random_response(message, history):
 
 demo = gr.ChatInterface(random_response)
 
-demo.launch()
+demo.launch(share=True)
