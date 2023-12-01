@@ -1,0 +1,44 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f5f9; /* Purple background color */
+    color: #0e0101; /* White text color */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Center the content horizontally */
+  }
+  
+  nav {
+    background-color: #4b0082; /* Dark purple background color for the navigation bar */
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-bottom: 10px; /* Adjust the margin for vertical spacing */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
