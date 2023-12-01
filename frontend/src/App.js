@@ -50,7 +50,9 @@ function App() {
         <Route path="/chatting" element={<ChattingPage />} />
         </Routes>
       </UserProvider>
+      <Footer />
     </Router>
+    
   );
 }
 
