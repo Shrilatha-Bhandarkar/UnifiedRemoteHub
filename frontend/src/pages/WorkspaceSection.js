@@ -1,7 +1,7 @@
 // Announcement.js
 import React, { useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
-
+import CustomNavbar from '../components/navbar';
 const Announcement = () => {
   const [announcement, setAnnouncement] = useState('');
   const [description, setDescription] = useState('');
