@@ -1,4 +1,5 @@
 // Home.js
+import Img from "../images/logo.png"
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
@@ -8,7 +9,6 @@ import img from "../images/pic.png"
 
 const Home = () => {
   const backgroundStyles = {
-    backgroundImage: `url(${img})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
@@ -21,6 +21,7 @@ const Home = () => {
         <Navbar />
       </div>
       <div style={backgroundStyles}>
+        
         <div className="text-container">
           <h1 >Distance is no obstacle when minds unite in the digital space. 
             Remote work is not a compromise; it's a celebration of our ability to connect beyond borders</h1>
