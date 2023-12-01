@@ -60,7 +60,10 @@ function TodoList() {
           completeTodo={completeTodo}
           removeTodo={removeTodo}
           updateTodo={updateTodo}
-        />
+        /></div>
+        <div className="bg">
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
       </div>
     </div>
   );

@@ -43,6 +43,10 @@ export default function WellBeing() {
         />
         <AudioCard running={running} />
       </div>
+      <div className="bg">
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
+      </div>
     </div>
   );
 }
