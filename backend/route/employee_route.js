@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const EmployeeController = require('../controller/employee.js');
+const multer = require('multer');
+const upload = multer({ dest: '../modal/uploads.js' });
 
 router.post('/login', EmployeeController.employeeLogin);
 router.get('/profile/:id', EmployeeController.getUserProfile);
