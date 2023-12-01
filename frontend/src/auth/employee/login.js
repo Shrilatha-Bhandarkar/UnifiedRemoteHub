@@ -9,7 +9,7 @@ const EmployeeLogin = () => {
   // const [userId, setUserId] = useState('6564ae0e2d20a1a892cfd080');
   // const { setUserId } = useContext(UserContext);
   // const [userId,setUserId]=useState(null)
-  const { setUserId } = useUser();
+  const { setUserId,setName, setEmail,setRole } = useUser();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,6 +24,43 @@ const EmployeeLogin = () => {
     }));
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post('http://localhost:3001/api2/login', {
+  //       email: formData.email,
+  //       password: formData.password,
+  //     });
+
+  //     // const { userId } = response.data; // Assuming the response contains userId
+  //     const { employee } = response.data;
+  //     // setUserId(userId); // Save userId to state
+  //     console.log('Login successful:', response.data);
+      
+  //   //   navigate('/home');
+  //   if (employee) {
+  //     const { _id, name, email } = employee;
+
+  //     // Save _id to the frontend state or context
+  //     setUserId(_id); // Assuming setUserId is a function to update the state or context
+  //     setName(name); // Set name in the UserContext
+  //     setEmail(email); // Set email in the UserContext
+  //     // You can also store name, email, or other necessary data in state/context
+
+  //     console.log('Received userId:', _id); 
+  //     console.log('Received Name:', name); 
+  //     console.log('Received Email:', email); 
+  //     // Redirect to the desired page after successful login
+  //     navigate('/home'); // Example redirection to the Home page
+  //   }
+  //   // navigate('/home',{ state: { userId } })
+
+  //     // Redirect or perform actions upon successful login
+  //   } catch (error) {
+  //     console.error('Login error:', error.response.data);
+  //     // Handle login error, display error message, etc.
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -31,32 +68,31 @@ const EmployeeLogin = () => {
         email: formData.email,
         password: formData.password,
       });
+  
+      if (response && response.data && response.data.employee && response.data.employee.role === 'employee') {
+        const { _id, name, email,role } = response.data.employee;
+  
+        setUserId(_id);
+        setName(name);
+        setEmail(email);
+        setRole(role)
+  
+        console.log(name);
+        console.log(email);
+        console.log("Employee Logged in");
 
-      // const { userId } = response.data; // Assuming the response contains userId
-      const { employee } = response.data;
-      // setUserId(userId); // Save userId to state
-      console.log('Login successful:', response.data);
-      
-    //   navigate('/home');
-    if (employee) {
-      const { _id, name, email } = employee;
-
-      // Save _id to the frontend state or context
-      setUserId(_id); // Assuming setUserId is a function to update the state or context
-      // You can also store name, email, or other necessary data in state/context
-
-      console.log('Received userId:', _id); 
-      // Redirect to the desired page after successful login
-      navigate('/home'); // Example redirection to the Home page
-    }
-    // navigate('/home',{ state: { userId } })
-
-      // Redirect or perform actions upon successful login
+        navigate('/home');
+      } else {
+        console.error('Login unsuccessful. Response:', response);
+        // Handle cases where the response or expected data is missing
+        // For example, display an error message or handle the scenario accordingly
+      }
     } catch (error) {
-      console.error('Login error:', error.response.data);
+      console.error('Login error:', error);
       // Handle login error, display error message, etc.
     }
   };
+  
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">

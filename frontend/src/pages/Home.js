@@ -1,27 +1,61 @@
-import React,{useEffect} from 'react'
-import Navbar from '../components/navbar'
-// import { useLocation } from 'react-router-dom';
-// import { useUser } from '../UserContext';
-
+// Home.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/navbar';
+import RemoteHome from "../images/RemoteHome.png";
+import './styles/Home.css';
+import "./Wellbeing/WellBeing"
 const Home = () => {
-  // const { userId } = useUser(); 
-  // const location = useLocation();
-  // const { _id } = location.state || {};
-  // useEffect(() => {
-  //   console.log('Received userId in Home:', _id);
-  // }, [_id]);
-  // useEffect(() => {
-  //   console.log('User ID in Home:', userId); // Log the userId in the console
-  //   // You can perform any other actions with the userId here
-  // }, [userId]);
+  const backgroundStyles = {
+    backgroundImage: `url(${RemoteHome})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    height: '90vh', // Set the height of the container to the full viewport height
+  };
+
   return (
     <div>
-      <Navbar />
-      hey there
-      {/* <h1>Welcome to Home</h1> */}
-      {/* <p>User ID: {userId}</p> */}
+      <div>
+        <Navbar />
+      </div>
+      <div style={backgroundStyles}>
+        <div className="text-container">
+          <h1>Distance is no obstacle when minds unite in the digital space. 
+            Remote work is not a compromise; it's a celebration of our ability to connect beyond borders</h1>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-md-4'>
+          <div className='card'>
+            <div className='card-body'>
+              <p className='card-text'>Want to build your own team?</p>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4'>
+          <div className='card'>
+            <div className='card-body'>
+              <p className='card-text'>Have tasks to perform?</p>
+              <a href="/todo">
+                <button className="btn btn-primary">Add to-do List</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4'>
+          <div className='card'>
+            <div className='card-body'>
+              <p className='card-text'>Stressed out too quickly?</p>
+              <a href="/wellbeing">
+                <button className="btn btn-primary">Let's Relax</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
