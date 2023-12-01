@@ -11,19 +11,14 @@ const Announcement = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Assuming you want to display the submitted data
     const data = {
       announcement,
       description,
       email,
     };
 
-    // Add logic to post the data to your backend
-    // You can use axios or fetch for making API calls
-    // Once the data is submitted, update the submittedData array
     setSubmittedData([...submittedData, data]);
 
-    // Clear form fields after submitting
     setAnnouncement('');
     setDescription('');
     setEmail('');
