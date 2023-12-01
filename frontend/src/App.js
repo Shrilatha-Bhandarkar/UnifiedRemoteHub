@@ -11,6 +11,7 @@ import Landingpage from './pages/landingpage';
 import Profile from './profile/profile';
 import Home from './pages/Home';
 import WellBeing from './pages/Wellbeing/WellBeing';
+import Page from './pages/view/page';
 import Workspace from './pages/Workspace';
 import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/wellbeing" element={<WellBeing />} />
           <Route path="/workspace" element={<Workspace />} />
+          <Route path='/page' element={<Page/>}/>
           <Route path="/todo" element={<TodoList />} />
           <Route path="/database" element={<Database />} />
           <Route path="/footer" element={<Footer />} />
