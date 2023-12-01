@@ -6,6 +6,7 @@ import { Route, Routes, BrowserRouter as Router, Link } from 'react-router-dom';
 const Work = () => {
   return (
       <nav>
+
         <ul>
           <li>
           <Link to="/">Workspace</Link>
@@ -27,7 +28,6 @@ const Work = () => {
           </li>
        
          </ul>
-            
           
       </nav>
   );
