@@ -1,15 +1,13 @@
-// todolist.js
 import React, { useState, useEffect } from 'react';
 import CustomNavbar from '../../components/navbar';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
-import './Todo.css';
+import './Todo.css'; // Ensure to import any additional CSS if needed
+
 function TodoList() {
-  // Load todos from local storage on component mount
   const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
   const [todos, setTodos] = useState(initialTodos);
 
-  // Update local storage whenever todos change
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
@@ -34,14 +32,14 @@ function TodoList() {
   };
 
   const removeTodo = (id) => {
-    const removedArr = [...todos].filter((todo) => todo.id !== id);
+    const removedArr = todos.filter((todo) => todo.id !== id);
     setTodos(removedArr);
   };
 
   const completeTodo = (id) => {
-    let updatedTodos = todos.map((todo) => {
+    const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
+        return { ...todo, isComplete: !todo.isComplete };
       }
       return todo;
     });
@@ -49,22 +47,25 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <>
       <CustomNavbar />
-      <div className='todo-body'>
-        <h1>What's the Plan for Today?</h1>
+    <div className='vh-100 d-flex flex-column justify-content-center shadow-lg align-items-center'>
+      <div className='todo-body p-5 rounded bg-light shadow'>
+        <h1 className='text-center mb-4'>What's the Plan for Today?</h1>
         <TodoForm onSubmit={addTodo} />
         <Todo
           todos={todos}
           completeTodo={completeTodo}
           removeTodo={removeTodo}
           updateTodo={updateTodo}
-        /></div>
-        <div className="bg">
-      <div className="bg bg2"></div>
-      <div className="bg bg3"></div>
+        />
+      </div>
+      <div className='bg'>
+        <div className='bg bg2'></div>
+        <div className='bg bg3'></div>
       </div>
     </div>
+    </>
   );
 }
 
