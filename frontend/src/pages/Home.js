@@ -1,10 +1,10 @@
 // Home.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import './styles/Home.css';
 import "./Wellbeing/WellBeing"
 import img from "../images/pic.png"
+
 const Home = () => {
   const backgroundStyles = {
     backgroundImage: `url(${img})`,
@@ -57,7 +57,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-       <div className="bg">
+      <div className="bg">
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
       </div>
