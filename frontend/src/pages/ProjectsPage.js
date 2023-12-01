@@ -1,7 +1,7 @@
 // ProjectSubmission.js
 import React, { useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
-
+import CustomNavbar from '../components/navbar';
 const ProjectSubmission = () => {
   const [projectTitle, setProjectTitle] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
