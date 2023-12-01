@@ -24,7 +24,7 @@ const Work = () => {
             <Link to="/meetings">Meetings</Link>
           </li>
           <li>
-          <a href=' https://ef0760b316e89feaeb.gradio.live'>project assistant</a>
+          <a href=' https://7efeb43a0073fd1e5f.gradio.live'>project assistant</a>
           </li>
     
         </ul>
