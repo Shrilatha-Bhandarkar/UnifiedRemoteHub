@@ -32,8 +32,11 @@
   
   .text-container h1 {
     margin-bottom: 10px;
-    color:aliceblue; /* Add margin below the heading, adjust as needed */
+    color:rgb(10, 18, 24); /* Add margin below the heading, adjust as needed */
   }
   .ms-2{
-    color: #ddd;
+    color: rgb(9, 9, 9);
+  }
+  body{
+    color: black;
   }
