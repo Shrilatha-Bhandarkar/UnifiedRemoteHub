@@ -11,7 +11,7 @@ import Landingpage from './pages/landingpage';
 import Profile from './profile/profile';
 import Home from './pages/Home';
 import WellBeing from './pages/WellBeing';
-import Workspace from './pages/Workspace';
+import Workspace from './components/Workspace';
 import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
 import { UserProvider } from './UserContext';
