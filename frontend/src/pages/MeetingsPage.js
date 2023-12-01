@@ -1,7 +1,7 @@
 // MeetingPage.js
 import React, { useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
-
+import CustomNavbar from '../components/navbar';
 const MeetingPage = () => {
   const [meetingDescription, setMeetingDescription] = useState('');
   const [meetingTiming, setMeetingTiming] = useState('');
@@ -30,7 +30,9 @@ const MeetingPage = () => {
   };
 
   return (
+    <div><CustomNavbar />
     <Container className="mt-5">
+      
       <Card>
         <Card.Body>
           <h2>Schedule Meeting</h2>
@@ -75,7 +77,7 @@ const MeetingPage = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 

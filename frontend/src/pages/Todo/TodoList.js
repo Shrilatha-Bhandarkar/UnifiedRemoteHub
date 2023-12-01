@@ -47,7 +47,7 @@ function TodoList() {
   };
 
   return (
-    <>
+    <div className='vh-100'>
       <CustomNavbar />
     <div className='vh-100 d-flex flex-column justify-content-center shadow-lg align-items-center'>
       <div className='todo-body p-5 rounded bg-light shadow'>
@@ -65,7 +65,7 @@ function TodoList() {
         <div className='bg bg3'></div>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 

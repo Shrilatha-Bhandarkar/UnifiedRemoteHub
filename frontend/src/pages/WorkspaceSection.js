@@ -1,7 +1,7 @@
 // Announcement.js
 import React, { useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
-
+import CustomNavbar from '../components/navbar';
 const Announcement = () => {
   const [announcement, setAnnouncement] = useState('');
   const [description, setDescription] = useState('');
@@ -30,6 +30,7 @@ const Announcement = () => {
   };
 
   return (
+    <div><CustomNavbar />
     <Container className="mt-5">
       <Card>
         <Card.Body>
@@ -76,7 +77,7 @@ const Announcement = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 

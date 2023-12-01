@@ -32,8 +32,37 @@
   
   .text-container h1 {
     margin-bottom: 10px;
-    color:aliceblue; /* Add margin below the heading, adjust as needed */
+    color:rgb(10, 18, 24); /* Add margin below the heading, adjust as needed */
   }
   .ms-2{
+
     color: #ddd;
+  }
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(150, 101, 248) 50%, #2011f6 30%);
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+    height: 100%;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
   }

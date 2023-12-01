@@ -1,7 +1,7 @@
 // ProjectSubmission.js
 import React, { useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
-
+import CustomNavbar from '../components/navbar';
 const ProjectSubmission = () => {
   const [projectTitle, setProjectTitle] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
@@ -30,6 +30,7 @@ const ProjectSubmission = () => {
   };
 
   return (
+    <div><CustomNavbar />
     <Container className="mt-5">
       <Card>
         <Card.Body>
@@ -75,7 +76,7 @@ const ProjectSubmission = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 
