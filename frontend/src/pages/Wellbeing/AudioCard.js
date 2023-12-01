@@ -34,7 +34,9 @@ const AudioCard = ({ running }) => {
 
   return (
     <div className='audio-card'>
-      <h2>Audio Player</h2>
+      <h2>Listen to music</h2>
+      <h6>-------------   *  -------------</h6>
+      <h6>Music is the rhythm of the soul, the harmony of the mind, and the symphony of remote collaboration. It’s the soothing melody that relaxes us, no matter where we are!</h6>
       <div>
         <input type="file" onChange={handleFileChange} />
         <button onClick={playAudio}>Play Audio</button>
