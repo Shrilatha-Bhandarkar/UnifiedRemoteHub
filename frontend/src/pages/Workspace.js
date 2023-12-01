@@ -15,16 +15,6 @@ const Workspace = () => {
   const [companies, setCompanies] = useState([]);
 
   const navigate=useNavigate()
-  // useEffect(() => {
-  //   const storedCompanies = JSON.parse(localStorage.getItem('companies'));
-  //   if (storedCompanies) {
-  //     setCompanies(storedCompanies);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('companies', JSON.stringify(companies));
-  // }, [companies]);
 
   const handleCreateWorkspace = async() => {
     // Code to handle creating the workspace
@@ -46,22 +36,8 @@ const Workspace = () => {
     console.log('Company Name:', companyName);
     console.log('Company Description:', companyDesc);
 
-    // Close the modal after handling creation
-    // setShowModal(false);
   };
 
-  // useEffect(() => {
-  //   async function fetchCompanies() {
-  //     try {
-  //       const response = await axios.get(`http://localhost:3001/api/company/${userId}`); // Replace '/api/companies' with your backend API endpoint
-  //       setCompanies(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching companies:', error);
-  //     }
-  //   }
-
-  //   fetchCompanies();
-  // }, []);
 
   useEffect(() => {
     fetchCompanies();
@@ -88,62 +64,9 @@ const Workspace = () => {
     }
   };
 
-  // const handleJoinWorkspace = (company) => {
-  //   if (role !== 'admin')
-  //   //  {
-  //   //   const isRequestAccepted = acceptedRequests.includes(company._id);
-  //   //   console.log('Is request accepted:', isRequestAccepted);
-  //   //   // Send an email when joining the workspace
-  //   //   if (isRequestAccepted) {
-  //   //     return <button className="btn btn-primary">View Workspace</button>;
-  //   //   } else
-  //     {
-  //     emailjs.init('kboLhIQ0SHIImU7wR');
-  //     const emailJSParams = {
-  //       companyName: company.name,
-  //       userName: name, /* Your user's name */
-  //       userEmail: email, /* User's email */
-  //       userId,
-  //     };
-    
-  //     emailjs
-  //       .send('service_bgfbjhi', 'template_iwjqiyn', emailJSParams)
-  //       .then((response) => {
-  //         console.log('Email sent:', response);
-  //         alert('Email sent successfully!');
-  //         axios.post('http://localhost:3001/api2/storeEmailDetails', {
-  //           // Include necessary data to store in the database
-  //           company: company.name,
-  //           userName: name,
-  //           userEmail: email,
-  //           userId,
-  //           // ...other relevant data
-  //         })
-  //         .then((dbResponse) => {
-  //           console.log('Data stored in database:', dbResponse.data);
-  //           // Call the parent function to join the workspace
-  //           // handleJoin();
-  //           // handleClose(); // Close the modal
-  //         })
-  //         .catch((error) => {
-  //           console.error('Error storing data in the database:', error);
-  //           // Handle error as needed
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         console.error('Email error:', error);
-  //         alert('Error sending email. Please try again.');
-  //       });
-  //   // } 
-  // }else {
-  //     // Handle admin actions if needed
-  //   }
-  // };
-  // Inside the handleJoinWorkspace function
+
 const handleJoinWorkspace = (company) => {
   if (role !== 'admin') {
-    // const isRequestAccepted = acceptedRequests.includes(company._id);
-    // const isRequestAccepted = acceptedRequests.some(request => request === companyName);
     const isRequestAccepted = acceptedRequests.includes(company._id);
     console.log('Is request accepted:', isRequestAccepted);
     console.log('Accepted requests:', acceptedRequests);
