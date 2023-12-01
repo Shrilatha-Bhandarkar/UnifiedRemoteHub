@@ -24,14 +24,9 @@ const Work = () => {
             <Link to="/meetings">Meetings</Link>
           </li>
           <li>
-<<<<<<< HEAD
-            <Link to="/chatting">Chat</Link>
-=======
           <a href='https://07ed39415730620e2c.gradio.live'>project assistant</a>
->>>>>>> dd8e47660d193519171d870eaeb409be82cd03b6
           </li>
-           {/* Styling for the right side image */}
-      
+    
         </ul>
         <div className="image-container">
         <img
