@@ -131,3 +131,21 @@ exports.getAllData = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.deleteCompanyById = async (req, res) => {
+  const companyId = req.params.id; // Assuming the company ID is passed as a parameter
+
+  try {
+    const company = await Data.findById(companyId);
+
+    if (!company) {
+      return res.status(404).json({ message: 'Company not found' });
+    }
+
+    await Data.findByIdAndDelete(companyId);
+
+    res.status(200).json({ message: 'Company deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
