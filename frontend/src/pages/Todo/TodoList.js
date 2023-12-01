@@ -4,7 +4,6 @@ import CustomNavbar from '../../components/navbar';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 import './Todo.css';
-
 function TodoList() {
   // Load todos from local storage on component mount
   const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];

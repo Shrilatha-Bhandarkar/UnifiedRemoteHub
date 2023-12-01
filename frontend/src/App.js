@@ -47,7 +47,9 @@ function App() {
         <Route path="/meetings" element={<MeetingsPage />} />
         </Routes>
       </UserProvider>
+      <Footer />
     </Router>
+    
   );
 }
 

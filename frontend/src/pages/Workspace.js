@@ -202,12 +202,12 @@ const handleJoinWorkspace = (company) => {
   return (
     <div>
       <CustomNavbar />
-      <Container className="mt-5 d-flex justify-content-end">
+      <Container className="mt-5 d-flex justify-content-end ">
         <Button onClick={() => setShowModal(true)} className="mb-3">
           Create Workspace
         </Button>
       </Container>
-      <Container className="mt-5">
+      <Container className="mt-5 Thecard">
         <Row>
           <Col>
             <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -269,6 +269,10 @@ const handleJoinWorkspace = (company) => {
           ))}
         </Row>
       </Container>
+      <div className="bg">
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
+      </div>
     </div>
   );
 };
