@@ -34,7 +34,7 @@ const WorkInProgressPage = () => {
   };
 
   return (
-    <div>
+    <div className='vh-100'>
       <CustomNavbar />
 
       <Container className="mt-5">
@@ -113,7 +113,7 @@ const WorkInProgressPage = () => {
         </Modal>
       </Container>
 
-      <img
+      {/* <img
         src="https://png.pngtree.com/background/20210711/original/pngtree-tmall-minimalist-study-abroad-enrollment-purple-poster-psd-layered-picture-image_1094464.jpg"  // Assuming img is the variable containing your image source
         alt="Background"
         style={{
@@ -121,7 +121,7 @@ const WorkInProgressPage = () => {
           height: '50vh',  // This will make the image take the full height of the viewport
           objectFit: 'cover',  // This property maintains the aspect ratio while covering the entire container
         }}
-      />
+      /> */}
        <div className="bg">
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>

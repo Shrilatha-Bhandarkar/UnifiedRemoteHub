@@ -49,7 +49,7 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <div className='vh-100'>
       <CustomNavbar />
       <div className='todo-body'>
         <h1>What's the Plan for Today?</h1>
