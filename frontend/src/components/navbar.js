@@ -118,7 +118,18 @@ const CustomNavbar = () => {
       </style>
 
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar">
-        <Navbar.Brand>logo</Navbar.Brand>
+        <Navbar.Brand> <img
+          src={logo}
+          className="img-fluid rounded"
+          alt="Logo"
+          style={{
+            width: '50px', // Set the desired width
+            height: 'auto', // Auto height to maintain aspect ratio
+            marginRight: '10px', // Adjust margin as needed
+            marginTop:'0%',
+            marginBottom:'0%'
+          }}
+        /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">

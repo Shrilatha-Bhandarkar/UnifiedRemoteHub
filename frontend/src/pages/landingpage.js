@@ -1,4 +1,4 @@
-import Img from '../assets/images/building.jpg'
+import Img from "../images/logo.png"
 import { Link } from 'react-router-dom';
 
 function LandingPage() {
@@ -8,10 +8,10 @@ function LandingPage() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 mt-4 mt-md-0">
-            <h1 className="display-5 " style={{  fontFamily: 'Markazi Text',fontWeight: 800}}>Welcome to Our Workspace</h1>
+            <h1 className="display-5 " style={{  fontFamily: 'Markazi Text',fontWeight: 800}}>Welcome to UnifiedRemoteHub</h1>
             <p className="lead mb-4 ms-5">Where amazing things happen!</p>
             <div className='ms-5'>
-              <button className="btn btn-primary btn-lg mb-3" type="button"><Link  className='text-white text-decoration-none' to='/login'>Login</Link></button>
+              <button className="btn btn-primary btn-lg mb-3" type="button"><Link  className='text-white text-decoration-none' to='/login'>Let's Explore </Link></button>
             </div>
           </div>
           <div className="col-md-6">
