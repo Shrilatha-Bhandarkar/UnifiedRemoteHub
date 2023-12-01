@@ -1,7 +1,5 @@
 // Home.js
-import Img from "../images/logo.png"
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import './styles/Home.css';
 import "./Wellbeing/WellBeing"
