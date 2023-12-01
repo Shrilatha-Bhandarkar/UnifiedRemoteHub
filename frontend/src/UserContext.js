@@ -25,7 +25,18 @@ export const UserProvider = ({ children }) => {
 
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [acceptedRequests, setAcceptedRequests] = useState([]);
+  // const [acceptedRequests, setAcceptedRequests] = useState([]);
+
+  const [acceptedRequests, setAcceptedRequests] = useState(() => {
+    const storedAcceptedRequests = localStorage.getItem('acceptedRequests');
+    return storedAcceptedRequests ? JSON.parse(storedAcceptedRequests) : [];
+  });
+
+  useEffect(() => {
+    // Update localStorage when acceptedRequests changes
+    localStorage.setItem('acceptedRequests', JSON.stringify(acceptedRequests));
+  }, [acceptedRequests]);
+  
   // const [role, setRole] = useState(null); 
   const [role, setRole] = useState(() => {
     return localStorage.getItem('role') || null;
@@ -45,8 +56,12 @@ export const UserProvider = ({ children }) => {
     }
   }, [userId,role]);
 
+  const addToAcceptedRequests = (companyId) => {
+    setAcceptedRequests((prevAcceptedRequests) => [...prevAcceptedRequests, companyId]);
+  };
+
   return (
-    <UserContext.Provider value={{ userId, setUserId,userId, setUserId, name, setName, email, setEmail,role,setRole,acceptedRequests, setAcceptedRequests }}>
+    <UserContext.Provider value={{ userId, setUserId,userId, setUserId, name, setName, email, setEmail,role,setRole,acceptedRequests, setAcceptedRequests,addToAcceptedRequests }}>
       {children}
     </UserContext.Provider>
   );

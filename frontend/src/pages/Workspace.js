@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap';
 
 const Workspace = () => {
-  const { userId, name, email, role, acceptedRequests } = useUser();
+  const { userId, name, email, role, acceptedRequests,addToAcceptedRequests } = useUser();
 
   const [showModal, setShowModal] = useState(false);
   const [companyName, setCompanyName] = useState('');
@@ -35,6 +35,9 @@ const Workspace = () => {
 
       setCompanies([...companies, response.data]);
       setShowModal(false);
+      if (role !== 'admin') {
+        addToAcceptedRequests(response.data._id);
+      }
     } catch (error) {
       console.error('Error creating company:', error);
     }
@@ -138,7 +141,8 @@ const Workspace = () => {
 const handleJoinWorkspace = (company) => {
   if (role !== 'admin') {
     // const isRequestAccepted = acceptedRequests.includes(company._id);
-    const isRequestAccepted = acceptedRequests.some(request => request === company.name);
+    // const isRequestAccepted = acceptedRequests.some(request => request === companyName);
+    const isRequestAccepted = acceptedRequests.includes(company._id);
     console.log('Is request accepted:', isRequestAccepted);
     console.log('Accepted requests:', acceptedRequests);
     console.log('Company ID:', company._id);
@@ -184,6 +188,7 @@ const handleJoinWorkspace = (company) => {
         console.error('Email error:', error);
         alert('Error sending email. Please try again.');
       });
+      addToAcceptedRequests(company._id);
   } else {
     console.log('Admin role. Showing View Workspace');
     // Handle admin actions if needed
@@ -250,7 +255,10 @@ const handleJoinWorkspace = (company) => {
                   </button>
                 )}
                <button className="btn btn-primary" onClick={() => handleJoinWorkspace(company)}>
-  {role === 'admin' || acceptedRequests.includes(company.name) ? 'View Workspace' : 'Join Workspace'}
+               {/* {role === 'admin' || acceptedRequests.includes(company._id) ? 'View Workspace' : 'Join Workspace'} */}
+               {role === 'admin' || acceptedRequests.includes(company._id) || company.isAccepted
+          ? 'View Workspace'
+          : 'Join Workspace'}
                </button>
 
               </div>
