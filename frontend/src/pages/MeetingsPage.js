@@ -30,9 +30,9 @@ const MeetingPage = () => {
   };
 
   return (
-    
+    <div><CustomNavbar />
     <Container className="mt-5">
-      <CustomNavbar />
+      
       <Card>
         <Card.Body>
           <h2>Schedule Meeting</h2>
@@ -77,7 +77,7 @@ const MeetingPage = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 

@@ -30,6 +30,7 @@ const ProjectSubmission = () => {
   };
 
   return (
+    <div><CustomNavbar />
     <Container className="mt-5">
       <Card>
         <Card.Body>
@@ -75,7 +76,7 @@ const ProjectSubmission = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 

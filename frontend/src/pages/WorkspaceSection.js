@@ -30,6 +30,7 @@ const Announcement = () => {
   };
 
   return (
+    <div><CustomNavbar />
     <Container className="mt-5">
       <Card>
         <Card.Body>
@@ -76,7 +77,7 @@ const Announcement = () => {
           ))}
         </Card.Body>
       </Card>
-    </Container>
+    </Container></div>
   );
 };
 

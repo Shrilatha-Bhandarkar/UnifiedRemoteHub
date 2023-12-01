@@ -85,7 +85,7 @@ const WorkInProgressPage = () => {
                 <div className='col-md-4'>
                   <div className='card'>
                     <div className='card-body'>
-                      <p className='card-text'>Voltix Solution</p>
+                      <p className='card-text'>Novigo Solution</p>
                       <p>Google LLC is an American multinational technology company focusing on artificial intelligence, 
                         online advertising, search engine technology, cloud computing, computer software, quantum computing, 
                         e-commerce, and consumer electronics.</p>
@@ -114,11 +114,11 @@ const WorkInProgressPage = () => {
       </Container>
 
       <img
-        src="https://img.freepik.com/premium-photo/stationery-books-pencils-purple-background-concept-learning-education_380562-1056.jpg"  // Assuming img is the variable containing your image source
+        src="https://png.pngtree.com/background/20210711/original/pngtree-tmall-minimalist-study-abroad-enrollment-purple-poster-psd-layered-picture-image_1094464.jpg"  // Assuming img is the variable containing your image source
         alt="Background"
         style={{
           width: '100%',
-          height: '100vh',  // This will make the image take the full height of the viewport
+          height: '50vh',  // This will make the image take the full height of the viewport
           objectFit: 'cover',  // This property maintains the aspect ratio while covering the entire container
         }}
       />

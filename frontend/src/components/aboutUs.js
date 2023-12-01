@@ -25,7 +25,7 @@ const BlogGrid = styled.div`
 const BlogTitle = styled.div`
   font-size: 21px;
   padding: 20px;
-  background-color: grey;
+  background-color: purple;
   color: white;
   font-family: "Pacifico", cursive;
 `;

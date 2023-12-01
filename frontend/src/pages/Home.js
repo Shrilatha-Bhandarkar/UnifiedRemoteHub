@@ -5,7 +5,7 @@ import Navbar from '../components/navbar';
 import RemoteHome from "../images/RemoteHome.png";
 import './styles/Home.css';
 import "./Wellbeing/WellBeing"
-import img from "../assets/images/background.jpg"
+import img from "../images/pic.png"
 const Home = () => {
   const backgroundStyles = {
     backgroundImage: `url(${img})`,
