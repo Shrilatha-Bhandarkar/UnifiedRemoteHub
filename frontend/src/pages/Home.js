@@ -30,6 +30,9 @@ const Home = () => {
           <div className='card'>
             <div className='card-body'>
               <p className='card-text'>Want to build your own team?</p>
+              <a href="/workspace">
+                <button className="btn btn-primary">Go to workspace</button>
+              </a>
             </div>
           </div>
         </div>
