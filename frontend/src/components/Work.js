@@ -16,7 +16,7 @@ const Work = () => {
          
             <Link to="/meetings">Meetings</Link>
          
-            <Link to="/chatting">Chat</Link>
+            <a href=' http://127.0.0.1:7860'>project assistant</a>
           
       </nav>
   );
