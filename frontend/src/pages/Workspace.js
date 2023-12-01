@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from '../UserContext';
 import CustomNavbar from '../components/navbar';
 import emailjs from 'emailjs-com';
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap';
 
@@ -13,6 +14,7 @@ const Workspace = () => {
   const [companyDesc, setCompanyDesc] = useState('');
   const [companies, setCompanies] = useState([]);
 
+  const navigate=useNavigate()
   // useEffect(() => {
   //   const storedCompanies = JSON.parse(localStorage.getItem('companies'));
   //   if (storedCompanies) {
@@ -150,6 +152,7 @@ const handleJoinWorkspace = (company) => {
     if (isRequestAccepted) {
       console.log('Request is already accepted. Showing View Workspace');
       // Update the acceptedRequests state or perform necessary actions here
+      navigate('/page')
       return;
     }
 

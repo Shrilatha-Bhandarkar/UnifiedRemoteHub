@@ -12,6 +12,7 @@ router.post('/createcompany',EmployeeController.createCompany)
 router.get('/getcompany',EmployeeController.getAllCompanies)
 router.post('/storeEmailDetails', EmployeeController.storeEmailDetails);
 router.get('/getDetails', EmployeeController.getAllData);
+router.delete('/deletecompany/:id', EmployeeController.deleteCompanyById);
 router.post('/submitProject', upload.single('file'), (req, res) => {
     // Access form data in req.body
     const projectName = req.body.projectName;

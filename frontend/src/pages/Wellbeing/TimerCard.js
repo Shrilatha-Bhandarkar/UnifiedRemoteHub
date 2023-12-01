@@ -3,9 +3,10 @@ import React from 'react';
 const TimerCard = ({ time, handleStartClick, handleToggleTimer, running, setTime }) => {
   return (
     <div className='timer-card'>
-      <h2>Timer</h2>
-      <p className='timer'>{format(time)}</p>
+      <h2>Let's meditate</h2>
+      <p className='timer'>Timer:{format(time)}</p>
       <div className='actions'>
+       
         <button onClick={handleToggleTimer}>{running ? 'Stop' : 'Resume'}</button>
         <button onClick={handleStartClick}>Start</button>
         <button onClick={() => { setTime(0); handleToggleTimer(); }}>Restart</button>

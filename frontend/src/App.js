@@ -12,11 +12,17 @@ import Profile from './profile/profile';
 import Home from './pages/Home';
 import Workspace from './pages/Workspace';
 import WellBeing from './pages/Wellbeing/WellBeing';
+import Page from './pages/view/page';
 import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
 import Database from './pages/database';
 import { UserProvider } from './UserContext';
-
+import page from "./pages/view/page"
+import AnnouncementPage from "./pages/WorkspaceSection"
+import ProjectsPage from './pages/ProjectsPage';
+import OngoingPage from './pages/OngoingTasksPage';
+import MeetingsPage from './pages/MeetingsPage';
+import ChattingPage from './pages/ChatPage';
 function App() {
   return (
     <Router>
@@ -32,9 +38,16 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/wellbeing" element={<WellBeing />} />
           <Route path="/workspace" element={<Workspace />} />
+          <Route path='/page' element={<Page/>}/>
           <Route path="/todo" element={<TodoList />} />
           <Route path="/database" element={<Database />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/workspace/*" element={<Page />} />
+        <Route path="/announcement" element={<AnnouncementPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/ongoing" element={<OngoingPage />} />
+        <Route path="/meetings" element={<MeetingsPage />} />
+        <Route path="/chatting" element={<ChattingPage />} />
         </Routes>
       </UserProvider>
     </Router>
