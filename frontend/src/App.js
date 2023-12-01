@@ -17,7 +17,12 @@ import TodoList from './pages/Todo/TodoList'
 import Footer from './components/footer';
 import Database from './pages/database';
 import { UserProvider } from './UserContext';
-
+import page from "./pages/view/page"
+import AnnouncementPage from "./pages/WorkspaceSection"
+import ProjectsPage from './pages/ProjectsPage';
+import OngoingPage from './pages/OngoingTasksPage';
+import MeetingsPage from './pages/MeetingsPage';
+import ChattingPage from './pages/ChatPage';
 function App() {
   return (
     <Router>
@@ -37,6 +42,12 @@ function App() {
           <Route path="/todo" element={<TodoList />} />
           <Route path="/database" element={<Database />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/workspace/*" element={<Page />} />
+        <Route path="/announcement" element={<AnnouncementPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/ongoing" element={<OngoingPage />} />
+        <Route path="/meetings" element={<MeetingsPage />} />
+        <Route path="/chatting" element={<ChattingPage />} />
         </Routes>
       </UserProvider>
     </Router>
