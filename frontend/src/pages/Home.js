@@ -15,7 +15,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{overflowX:'hidden'}}>
       <div>
         <Navbar />
       </div>
